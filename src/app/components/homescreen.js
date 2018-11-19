@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Platform, Text, View} from 'react-native';
 
-export default class HomeScreen extends Component {
+class HomeScreen extends Component {
 
   async componentDidMount() {
     // For debugging purpose
@@ -16,6 +16,9 @@ export default class HomeScreen extends Component {
     );
   }
 }
+
+
+export default HomeScreen;
 
 const styles = {
   container: {

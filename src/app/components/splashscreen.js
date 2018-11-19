@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {Platform, Text, View} from 'react-native';
+import {Platform, Text, View, TouchableOpacity} from 'react-native';
 
-export default class SplashScreen extends Component {
+class SplashScreen extends Component {
 
   async componentDidMount() {
     // For debugging purpose
@@ -9,13 +9,20 @@ export default class SplashScreen extends Component {
   }
 
   render() {
+    const {navigate} = this.props.navigation
     return (
       <View style={styles.container}>
         <Text style={styles.textStyles}>Welcome Splash</Text>
+          <TouchableOpacity onPress={()=>navigate("HomeScreen", {"title": "Home"})}>
+            <Text>Go Home</Text>
+          </TouchableOpacity>
       </View>
     );
   }
 }
+
+
+export default SplashScreen;
 
 const styles = {
   container: {
