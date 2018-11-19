@@ -5,7 +5,7 @@ import { NavigationActions, StackActions } from 'react-navigation';
 class SplashScreen extends Component {
 
   async componentDidMount() {
-    // For debugging purpose
+    // Debug
     console.log("Component Mounted -> 'SplashScreen'");
     console.log(this.props.navigation.state);
   }
@@ -16,10 +16,12 @@ class SplashScreen extends Component {
       actions: [NavigationActions.navigate({ routeName })]
     })
     this.props.navigation.dispatch(actionToDispatch)
+    // Debug
+    console.log("Removing SplashScreen from Navigation stack");
+    console.log("Navigating to HomeScreen & changing InitialRoute to HomeScreen");
   }
 
   render() {
-    //const {navigate} = this.props.navigation
     return (
       <View style={styles.container}>
         <Text style={styles.textStyles}>Welcome Splash</Text>

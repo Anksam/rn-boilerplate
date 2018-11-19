@@ -12,8 +12,14 @@ import AppContainer from './src/navigation/routes';
 console.disableYellowBox = true;
 
 export default class App extends Component {
-  
+
+  async componentWillMount() {
+    // Debug
+    console.log("Launching App");
+  }
+
   async componentDidMount() {
+    // Debug
     console.log("App launched");
   }
 

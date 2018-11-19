@@ -1,13 +1,22 @@
 import React, {Component} from 'react';
 import {Platform, Text, View} from 'react-native';
-import { NavigationActions } from 'react-navigation'
 
 class HomeScreen extends Component {
 
+  async componentWillMount() {
+    // debug
+    console.log("Changed InitialRoute to HomeScreen");
+  }
+
   async componentDidMount() {
-    // For debugging purpose
+    // debug
     console.log("Component Mounted -> 'HomeScreen'");
     console.log(this.props.navigation.state);
+  }
+
+  async componentWillUnmount() {
+    // debug
+    console.log("Exiting Application");
   }
 
   render() {
