@@ -1,19 +1,29 @@
 import React, {Component} from 'react';
 import {Platform, Text, View, TouchableOpacity} from 'react-native';
+import { NavigationActions, StackActions } from 'react-navigation';
 
 class SplashScreen extends Component {
 
   async componentDidMount() {
     // For debugging purpose
     console.log("Component Mounted -> 'SplashScreen'");
+    console.log(this.props.navigation.state);
+  }
+
+  _navigateTo = (routeName: string) => {
+    const actionToDispatch = StackActions.reset({
+      index: 0,
+      actions: [NavigationActions.navigate({ routeName })]
+    })
+    this.props.navigation.dispatch(actionToDispatch)
   }
 
   render() {
-    const {navigate} = this.props.navigation
+    //const {navigate} = this.props.navigation
     return (
       <View style={styles.container}>
         <Text style={styles.textStyles}>Welcome Splash</Text>
-          <TouchableOpacity onPress={()=>navigate("HomeScreen", {"title": "Home"})}>
+          <TouchableOpacity onPress={()=>this._navigateTo('HomeScreen')}>
             <Text>Go Home</Text>
           </TouchableOpacity>
       </View>

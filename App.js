@@ -9,8 +9,10 @@
 import React, {Component} from 'react';
 import AppContainer from './src/navigation/routes';
 
-export default class App extends Component {
+console.disableYellowBox = true;
 
+export default class App extends Component {
+  
   async componentDidMount() {
     console.log("App launched");
   }
