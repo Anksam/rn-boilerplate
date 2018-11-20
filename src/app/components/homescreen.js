@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Platform, Text, View} from 'react-native';
+import { robotoWeights, webWeights } from 'react-native-typography'
 
 class HomeScreen extends Component {
 
@@ -22,7 +23,7 @@ class HomeScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.textStyles}>Welcome Home</Text>
+        <Text style={webWeights.regular}>Welcome home</Text>
       </View>
     );
   }
@@ -38,9 +39,4 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
   },
-  textStyles: {
-    fontSize: 20,
-    color: 'red',
-    textAlign: 'center',
-  }
 };

@@ -1,8 +1,13 @@
 import React, {Component} from 'react';
 import {Platform, Text, View, TouchableOpacity} from 'react-native';
 import { NavigationActions, StackActions } from 'react-navigation';
+import { robotoWeights, webWeights, iOSColors } from 'react-native-typography'
 
 class SplashScreen extends Component {
+
+  static navigationOptions = ({ navigation }) => ({
+      header:null,
+   });
 
   async componentDidMount() {
     // Debug
@@ -24,9 +29,9 @@ class SplashScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.textStyles}>Welcome Splash</Text>
+        <Text style={[robotoWeights.thin, styles.txtTitle]}>Your App</Text>
           <TouchableOpacity onPress={()=>this._navigateTo('HomeScreen')}>
-            <Text>Go Home</Text>
+            <Text style={webWeights.regular}>Go to home</Text>
           </TouchableOpacity>
       </View>
     );
@@ -43,9 +48,8 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
   },
-  textStyles: {
-    fontSize: 20,
-    color: 'red',
-    textAlign: 'center',
-  }
+    txtTitle: {
+    color: iOSColors.pink,
+    fontSize: 30,
+  },
 };

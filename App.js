@@ -9,7 +9,7 @@
 import React, {Component} from 'react';
 import AppContainer from './src/navigation/routes';
 
-console.disableYellowBox = true;
+//console.disableYellowBox = true;
 
 export default class App extends Component {
 
