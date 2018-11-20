@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Platform, Text, View} from 'react-native';
 import { robotoWeights, webWeights } from 'react-native-typography';
-import Icon from "react-native-vector-icons/Ionicons";
+import Icon from './Icon';
 
 class HomeScreen extends Component {
 
@@ -25,7 +25,7 @@ class HomeScreen extends Component {
     return (
       <View style={styles.container}>
         <Icon
-          name="ios-add"
+          name="add"
           color="#ccc"
           size={25}
         />
