@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Platform, Text, View} from 'react-native';
+import {Platform, Text, View, AsyncStorage} from 'react-native';
 import { robotoWeights, webWeights } from 'react-native-typography';
 import Icon from './Icon';
 
@@ -14,6 +14,12 @@ class HomeScreen extends Component {
     // debug
     console.log("Component Mounted -> 'HomeScreen'");
     console.log(this.props.navigation.state);
+    await AsyncStorage.getItem('first_time_launch').then((value)=> this.setState({'first_time_launch': value}));
+    if (this.state.first_time_launch == 'yes') {
+      await AsyncStorage.setItem('first_time_launch', 'no');
+    }
+    // debug
+    console.log(this.state.first_time_launch + " " + "App has already launched");
   }
 
   async componentWillUnmount() {
